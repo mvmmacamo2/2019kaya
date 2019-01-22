@@ -1,20 +1,21 @@
 <template>
   <v-app>
-    <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn
-        flat
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
-        <span class="mr-2">Latest Release</span>
-      </v-btn>
-    </v-toolbar>
-
+    <!--<v-toolbar app>-->
+      <!--<v-toolbar-title class="headline text-uppercase">-->
+        <!--<span>Vuetify</span>-->
+        <!--<span class="font-weight-light">MATERIAL DESIGN</span>-->
+      <!--</v-toolbar-title>-->
+      <!--<v-spacer></v-spacer>-->
+      <!--<v-toolbar-items>-->
+        <!--<v-btn flat>-->
+          <!--Entrar-->
+        <!--</v-btn>-->
+        <!--<v-btn flat>-->
+          <!--Criar Conta-->
+        <!--</v-btn>-->
+      <!--</v-toolbar-items>-->
+    <!--</v-toolbar>-->
+   <TopMenu></TopMenu>
     <v-content>
       <HelloWorld/>
     </v-content>
@@ -23,11 +24,13 @@
 
 <script>
 import HelloWorld from './components/HelloWorld'
+import TopMenu from './components/menu/TopMenu'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    TopMenu
   },
   data () {
     return {
