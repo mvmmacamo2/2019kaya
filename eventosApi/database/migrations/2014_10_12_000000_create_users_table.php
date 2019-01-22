@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('estado_perfil')->nullable();
             $table->integer('nuit')->nullable();
             $table->string('email')->unique();
-            $table->string('uuid')->unique();
+            $table->string('uuid')->unique()->nullable();
             $table->string('nivel')->default('normal');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
