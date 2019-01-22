@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81a25519-0f25-4478-b5b3-50cdd3cce739" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../evento/src/components/menu/TopMenu.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../evento/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../evento/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../evento/src/components/menu/TopMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../evento/src/components/menu/TopMenu.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
