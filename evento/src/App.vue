@@ -1,36 +1,31 @@
 <template>
- <v-app>
-   <v-toolbar dark class="indigo darken-2">
-     <v-toolbar-side-icon></v-toolbar-side-icon>
-
-     <v-toolbar-title class="white--text">Kaya</v-toolbar-title>
-
-     <v-spacer></v-spacer>
-
-     <v-toolbar-items>
-       <v-btn flat v-for="menu in menuLogin" :key="menu.title" :to="menu.link">
-         <v-icon>{{menu.icon}}</v-icon>
-         {{ menu.title}}
-       </v-btn>
-     </v-toolbar-items>
-   </v-toolbar>
- </v-app>
+  <div id="app">
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </div>
+    <router-view/>
+  </div>
 </template>
 
-<script>
-export default {
-  name: 'App',
-  data () {
-    return {
-      menuLogin: [
-        {icon: 'person_add', title: 'Criar conta', link: '/criar-conta'},
-        {icon: 'supervisor_account', title: 'Entrar', link: '/login'}
-      ]
-    }
-  }
-}
-</script>
-
 <style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+#nav {
+  padding: 30px;
+}
 
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
 </style>

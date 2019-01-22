@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'apelido', 'estado', 'bi', 'nuit', 'nivel', 'estado_perfil', 'data_nascimento', 'uuid', 'foto'
     ];
 
     /**
@@ -27,4 +27,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = ucfirst(strtolower($value));
+    }
+    public function setApelidoAttribute($value)
+    {
+        $this->attributes['apelido'] = ucfirst(strtolower($value));
+    }
 }
