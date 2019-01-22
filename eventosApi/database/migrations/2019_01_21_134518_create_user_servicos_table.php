@@ -19,7 +19,7 @@ class CreateUserServicosTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('servico_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('servico_id')->references('id')->on('servicos');
             $table->integer('operador_id')->nullable();
             $table->timestamps();
         });
