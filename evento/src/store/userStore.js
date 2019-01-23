@@ -1,3 +1,6 @@
+import Vue from 'vue'
+import { getHeader, CreateAccountUrl, userUrl } from '../config'
+
 const state = {
   authUser: null,
   message: null,
@@ -34,6 +37,9 @@ const actions = {
   setError: ({ commit }, erro) => {
     commit('SET_ERROR', erro)
   },
+  setLoading: ({ commit }, payload) => {
+    commit('SET_LOADING', payload)
+  },
   setAuthUser: ({ commit }, user) => {
     commit('SET_AUTH_USER', user)
   },
@@ -45,6 +51,21 @@ const actions = {
   },
   clearMessage: ({ commit }) => {
     commit('CLEAR_MESSAGE')
+  },
+  createAccount: ({ commit }, payload) => {
+    commit('SET_LOADING', true)
+    const postData = {
+      email: payload.email,
+      password: payload.password
+    }
+    Vue.http.post(CreateAccountUrl, postData, { headers: getHeader() }).then(response => {
+      commit('SET_LOADING', false)
+      // commit('SET_AUTH_USER', response)
+      commit('SET_MESSAGE', 'Conta criada com Sucesso!')
+    }).catch(error => {
+      commit('SET_LOADING', false)
+      commit('SET_ERROR', error)
+    })
   }
 }
 
@@ -55,11 +76,16 @@ const getters = {
   error () {
     return state.error
   },
+  loading () {
+    return state.loading
+  },
   user () {
+    return state.authUser
+  },
+  authUser () {
     return state.authUser
   }
 }
 export default {
   state, mutations, actions, getters
 }
-
