@@ -1,8 +1,14 @@
 <template>
-  <v-app>
+  <div>
     <v-navigation-drawer
+      app
       stateless
       value="true"
+      absolute
+      clipped
+      fixed
+      width="260"
+      v-model="drawer"
     >
       <v-list>
         <v-list-tile>
@@ -63,8 +69,8 @@
         </v-list-group>
       </v-list>
     </v-navigation-drawer>
-
-    <v-toolbar app class="pink darken-3" dark>
+    <v-toolbar app fixed clipped-left class="pink darken-3" dark >
+      <v-toolbar-side-icon @click.stop="drawer = !drawer" > </v-toolbar-side-icon>
       <v-toolbar-title class="headline text-uppercase">
         <span>K</span>
         <!--<span class="font-weight-light">MATERIAL DESIGN</span>-->
@@ -83,7 +89,7 @@
         </v-btn>
       </v-toolbar-items>
     </v-toolbar>
-  </v-app>
+  </div>
 </template>
 
 <script>
@@ -91,12 +97,23 @@ export default {
   name: 'TopMenu',
   data () {
     return {
+      drawer: false,
       menuLogin: [
         { title: 'Entrar', icon: 'supervisor_account', link: '/entrar' },
         { title: 'Criar conta', icon: 'person_add', link: '/criar-conta' }
       ],
       menuGeral: [
         { title: 'Salões', icon: 'explore', link: '/servicos/casaseventos' }
+      ],
+      admins: [
+        ['Management', 'people_outline'],
+        ['Settings', 'settings']
+      ],
+      cruds: [
+        ['Create', 'add'],
+        ['Read', 'insert_drive_file'],
+        ['Update', 'update'],
+        ['Delete', 'delete']
       ]
     }
   }
