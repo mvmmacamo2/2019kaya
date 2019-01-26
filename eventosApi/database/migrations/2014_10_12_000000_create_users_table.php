@@ -17,9 +17,11 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name')->nullable();
             $table->string('apelido', 20)->nullable();
-            $table->string('foto')->nullable();
+            $table->string('foto')->default('http://localhost:8000/imagens/avatar/Default-avatar.jpg');
             $table->date('data_nascimento')->nullable();
             $table->string('bi')->nullable();
+            $table->string('celular')->nullable();
+            $table->string('endereco')->nullable();
             $table->string('estado')->nullable();
             $table->string('estado_perfil')->nullable();
             $table->integer('nuit')->nullable();

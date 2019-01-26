@@ -1,76 +1,274 @@
 <template>
   <v-app>
-    <!--<v-toolbar app>-->
-      <!--<v-toolbar-title class="headline text-uppercase">-->
-        <!--<span>Vuetify</span>-->
+    <v-navigation-drawer
+      app
+      stateless
+      value="true"
+      absolute
+      clipped
+      fixed
+      width="300"
+      v-model="drawer"
+    >
+      <v-list>
+        <v-list-tile :to="'/'">
+          <v-list-tile-action>
+            <v-icon>dashboard</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-title>Home</v-list-tile-title>
+        </v-list-tile>
+       <v-divider></v-divider>
+        <v-list-group prepend-icon="view_agenda">
+          <v-list-tile slot="activator">
+            <v-list-tile-title>Administração</v-list-tile-title>
+          </v-list-tile>
+        </v-list-group>
+        <v-divider></v-divider>
+        <v-list-group prepend-icon="person" no-action>
+          <v-list-tile slot="activator">
+            <v-list-tile-title>Minha Conta</v-list-tile-title>
+          </v-list-tile>
+          <v-list-tile
+            v-for="menu in menu.admin.minhaconta"
+            :key="menu.title"
+            :to="menu.link"
+          >
+            <v-list-tile-action>
+            <v-icon v-text="menu.icon"></v-icon>
+            </v-list-tile-action>
+            <v-list-tile-title v-text="menu.title"></v-list-tile-title>
+            <!--<v-list-tile-action>-->
+              <!--<v-icon v-text="menu.icon"></v-icon>-->
+            <!--</v-list-tile-action>-->
+          </v-list-tile>
+        </v-list-group>
+
+        <v-list-group
+          prepend-icon="account_circle"
+          value="true"
+        >
+          <v-list-tile slot="activator">
+            <v-list-tile-title>Users</v-list-tile-title>
+          </v-list-tile>
+
+          <v-list-group
+            no-action
+            sub-group
+            value="true"
+          >
+            <v-list-tile slot="activator">
+              <v-list-tile-title>Admin</v-list-tile-title>
+            </v-list-tile>
+
+            <v-list-tile
+              v-for="(admin, i) in admins"
+              :key="i"
+              @click=""
+            >
+              <v-list-tile-title v-text="admin[0]"></v-list-tile-title>
+              <v-list-tile-action>
+                <v-icon v-text="admin[1]"></v-icon>
+              </v-list-tile-action>
+            </v-list-tile>
+          </v-list-group>
+
+          <v-list-group
+            sub-group
+            no-action
+          >
+            <v-list-tile slot="activator">
+              <v-list-tile-title>Actions</v-list-tile-title>
+            </v-list-tile>
+
+            <v-list-tile
+              v-for="(crud, i) in cruds"
+              :key="i"
+              @click=""
+            >
+              <v-list-tile-title v-text="crud[0]"></v-list-tile-title>
+              <v-list-tile-action>
+                <v-icon v-text="crud[1]"></v-icon>
+              </v-list-tile-action>
+            </v-list-tile>
+          </v-list-group>
+        </v-list-group>
+      </v-list>
+    </v-navigation-drawer>
+    <v-toolbar app fixed clipped-left class="pink darken-3" dark >
+      <v-toolbar-side-icon @click.stop="drawer = !drawer" > </v-toolbar-side-icon>
+      <v-toolbar-title class="headline text-uppercase">
+        <span>K</span>
         <!--<span class="font-weight-light">MATERIAL DESIGN</span>-->
-      <!--</v-toolbar-title>-->
+      </v-toolbar-title>
+      <v-toolbar-items>
+        <v-btn flat v-for="menu in menuGeral" :key="menu.title" :to="menu.link">
+          <v-icon>{{menu.icon}}</v-icon>
+          {{menu.title}}
+        </v-btn>
+      </v-toolbar-items>
+      <v-spacer></v-spacer>
+      <v-toolbar-items v-if="userStore.authUser === null">
+        <v-btn flat v-for="menu in menuLogin" :key="menu.title" :to="menu.link">
+          <v-icon>{{menu.icon}}</v-icon>
+          {{menu.title}}
+        </v-btn>
+      </v-toolbar-items>
       <!--<v-spacer></v-spacer>-->
-      <!--<v-toolbar-items>-->
-        <!--<v-btn flat>-->
-          <!--Entrar-->
-        <!--</v-btn>-->
-        <!--<v-btn flat>-->
-          <!--Criar Conta-->
-        <!--</v-btn>-->
-      <!--</v-toolbar-items>-->
-    <!--</v-toolbar>-->
-   <TopMenu></TopMenu>
+      <!--<v-btn icon>-->
+        <!--<v-icon>apps</v-icon>-->
+      <!--</v-btn>-->
+      <!--<v-btn icon>-->
+        <!--<v-icon>notifications</v-icon>-->
+      <!--</v-btn>-->
+
+        <!--<v-icon-->
+          <!--large-->
+          <!--color="grey lighten-1"-->
+        <!--&gt;-->
+          <!--shopping_cart-->
+        <!--</v-icon>-->
+        <v-btn icon large>
+          <v-badge  left color="red">
+            <span slot="badge">6</span>
+          <v-icon>notifications</v-icon>
+          </v-badge>
+        </v-btn>
+      <!--<v-btn icon large>-->
+        <!--<v-avatar size="32px" tile>-->
+          <!--<img-->
+            <!--src="https://cdn.vuetifyjs.com/images/logos/logo.svg"-->
+            <!--alt="Vuetify"-->
+          <!--&gt;-->
+        <!--</v-avatar>-->
+      <!--</v-btn>-->
+      <v-toolbar-items v-if="userD !== null">
+        <v-menu offset-y>
+          <v-btn
+            slot="activator"
+            dark
+            icon
+            large
+            :title="userD.name"
+            flat
+          >
+            <v-avatar size="45px">
+              <img
+                :src="userD.foto"
+                :alt="userD.name"
+              >
+            </v-avatar>
+          </v-btn>
+          <!--userStore.authUser != null && item.title == 'sair'"  @click="logOutUser"-->
+          <v-list>
+            <v-list-tile
+              v-for="(item, index) in menu.logado"
+              :key="index"
+              :to="item.link"
+              v-if="userStore.authUser != null && item.title != 'sair'"
+            >
+              <v-icon>{{item.icon}}</v-icon>
+              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+            </v-list-tile>
+            <v-list-tile
+              v-for="(item, index) in menu.logado"
+              :key="index"
+              :to="item.link"
+              v-if="userStore.authUser != null && item.title == 'sair'" @click="logOutUser()"
+            >
+              <v-icon>{{item.icon}}</v-icon>
+              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+            </v-list-tile>
+          </v-list>
+        </v-menu>
+      </v-toolbar-items>
+    </v-toolbar>
+   <!--<TopMenu></TopMenu>-->
     <v-content>
       <router-view></router-view>
     </v-content>
-
-    <v-footer
-      dark
-      height="auto"
-    >
-      <v-card
-        flat
-        tile
-        class="pink darken-3 white--text text-xs-center"
-      >
-        <v-card-text>
-          <v-btn
-            v-for="icon in icons"
-            :key="icon"
-            class="mx-3 white--text"
-            icon
-          >
-            <v-icon size="24px">{{ icon }}</v-icon>
-          </v-btn>
-        </v-card-text>
-
-        <v-card-text class="white--text pt-0">
-          Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-        </v-card-text>
-
-        <v-divider></v-divider>
-
-        <v-card-text class="white--text">
-          &copy; {{ new Date()}} — <strong>kaya</strong>
-        </v-card-text>
-      </v-card>
-    </v-footer>
   </v-app>
 </template>
 
 <script>
-import TopMenu from './components/menu/TopMenu'
+// import TopMenu from './components/menu/TopMenu'
+import { mapState } from 'vuex'
+import { userUrl, getHeader } from './config'
 
 export default {
   name: 'App',
   components: {
-    TopMenu
+    // TopMenu
+  },
+  created () {
+    const userObj = JSON.parse(window.localStorage.getItem('authUser'))
+    if (userObj !== null) {
+      this.$store.dispatch('setAuthUser', userObj)
+      this.checkUserStatus()
+      this.$store.dispatch('getUser')
+    }
+  },
+  computed: {
+    ...mapState({
+      userStore: state => state.userStore
+    }),
+    userD () {
+      return this.$store.getters.user
+    }
   },
   data () {
     return {
-      icons: [
-        'fab fa-facebook',
-        'fab fa-twitter',
-        'fab fa-google-plus',
-        'fab fa-linkedin',
-        'fab fa-instagram'
+      drawer: false,
+      menuLogin: [
+        { title: 'Entrar', icon: 'supervisor_account', link: '/entrar' },
+        { title: 'Criar conta', icon: 'person_add', link: '/criar-conta' }
+      ],
+      menuGeral: [
+        { title: 'Salões', icon: 'explore', link: '/servicos/casaseventos' }
+      ],
+      menu: {
+        logado: [
+          { icon: 'settings', title: 'Configuracoes', link: '/admin/configuracoes' },
+          { icon: 'supervisor_account', title: 'perfil', link: '/utilizador/perfil' },
+          { icon: 'exit_to_app', title: 'sair', link: '/' }
+        ],
+        admin: {
+          minhaconta: [
+            { icon: 'settings', title: 'Servicos', link: '/minha-conta/servicos' },
+            { icon: 'supervisor_account', title: 'perfil', link: '/utilizador/perfil' }
+          ]
+        }
+      },
+      admins: [
+        ['Management', 'people_outline'],
+        ['Settings', 'settings']
+      ],
+      cruds: [
+        ['Create', 'add'],
+        ['Read', 'insert_drive_file'],
+        ['Update', 'update'],
+        ['Delete', 'delete']
       ]
+    }
+  },
+  methods: {
+    logOutUser () {
+      this.$store.dispatch('clearAuth')
+      window.localStorage.removeItem('authUser')
+      this.$store.dispatch('clearUser')
+      this.$router.push('/')
+    },
+    checkUserStatus () {
+      this.$http.get(userUrl, { headers: getHeader() }).then(response => {
+        // console.log('resposta', response)
+      }).catch(error => {
+        console.log('errosUser', error)
+        if (error.status === 401) {
+          this.$store.dispatch('clearAuth')
+          window.localStorage.removeItem('authUser')
+          this.$store.dispatch('clearUser')
+          this.$router.push('/')
+        }
+      })
     }
   }
 }

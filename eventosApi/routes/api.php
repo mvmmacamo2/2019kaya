@@ -17,4 +17,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// USER SECTION
 Route::post('create-acount', ['uses' => 'UserController@registar']);
+Route::post('update-avatar-user', ['uses' => 'UserController@updateAvatar']);
+Route::post('update-user', ['uses' => 'UserController@updateUser']);
+// ENDE USER SERCTION

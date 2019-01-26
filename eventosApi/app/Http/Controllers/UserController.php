@@ -44,4 +44,37 @@ class UserController extends Controller
 
         return Route::dispatch($proxy);
     }
+    public function updateAvatar(Request $request)
+    {
+        $exploded = explode(',', $request->foto);
+
+        $decoded = base64_decode($exploded[1]);
+
+        if (str_contains($exploded[0], 'jpeg'))
+            $extension = 'jpg';
+        else
+            $extension = 'png';
+
+
+        $fileName = str_random().'.'.$extension;
+
+        $path = public_path().'/imagens/users/avatar'.'/'.$fileName;
+
+        file_put_contents($path, $decoded);
+        $user = User::find($request->id);
+        if ($user->foto === $request->foto) {
+            return response()->json(['message' => 'Avatar Actualizado com Sucesso!']);
+        } else {
+            $user->update($request->except('foto') + ['foto' => 'http://localhost:8000/imagens/users/avatar/'.$fileName]);
+            $new = User::find($request->id);
+            return response()->json(['message' => 'Avatar Actualizado com Sucesso!', 'data' => $new]);
+        }
+    }
+    public function updateUser(Request $request)
+    {
+        $user = User::find($request->id);
+        $user->update($request->all());
+        $new = User::find($request->id);
+        return response()->json(['message' => 'Perfil Actualizado com Sucesso!', 'data' => $new]);
+    }
 }
