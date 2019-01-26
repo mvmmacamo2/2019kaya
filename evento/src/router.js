@@ -4,6 +4,8 @@ import Home from './views/Home.vue'
 import About from './views/About.vue'
 import Login from './components/User/Login'
 import Registar from './components/User/Registar'
+import Perfil from './components/User/Perfil'
+import Servicos from './components/User/Servicos/Servicos'
 
 Vue.use(Router)
 
@@ -13,8 +15,20 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'Home',
       component: Home
+    },
+    {
+      path: '/utilizador/perfil',
+      name: 'Perfil',
+      component: Perfil,
+      meta: { requiresAuth: true }
+    },
+    {
+      path: '/minha-conta/servicos',
+      name: 'Servicos',
+      component: Servicos,
+      meta: { requiresAuth: true }
     },
     {
       path: '/about',

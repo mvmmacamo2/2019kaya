@@ -1,11 +1,13 @@
 import Vue from 'vue'
-import { getHeader, CreateAccountUrl, userUrl } from '../config'
+import { getHeader, CreateAccountUrl, userUrl, LoginUrl, updateAvatar, updatePerfilUrl } from '../config'
+import { ClientSecret, ClientId } from '../config/env'
 
 const state = {
   authUser: null,
   message: null,
   error: null,
-  loading: false
+  loading: false,
+  user: null
 }
 const mutations = {
   SET_AUTH_USER (state, userObj) {
@@ -28,11 +30,23 @@ const mutations = {
   },
   CLEAR_ERROR (state) {
     state.error = null
+  },
+  SET_USER (state, payload) {
+    state.user = payload
+  },
+  CLEAR_USER (state) {
+    state.user = null
   }
 }
 const actions = {
   setMessage: ({ commit }, msg) => {
     commit('SET_MESSAGE', msg)
+  },
+  setUser: ({ commit }, payload) => {
+    commit('SET_USER', payload)
+  },
+  clearUser: ({ commit }) => {
+    commit('CLEAR_USER')
   },
   setError: ({ commit }, erro) => {
     commit('SET_ERROR', erro)
@@ -58,13 +72,124 @@ const actions = {
       email: payload.email,
       password: payload.password
     }
-    Vue.http.post(CreateAccountUrl, postData, { headers: getHeader() }).then(response => {
-      commit('SET_LOADING', false)
-      // commit('SET_AUTH_USER', response)
-      commit('SET_MESSAGE', 'Conta criada com Sucesso!')
+    const authUser = {}
+    Vue.http.post(CreateAccountUrl, postData).then(response => {
+      authUser.access_token = response.data.access_token
+      authUser.refresh_token = response.data.refresh_token
+      window.localStorage.setItem('authUser', JSON.stringify(authUser))
+      Vue.http.get(userUrl, { headers: getHeader() }).then(response => {
+        authUser.name = response.body.name
+        authUser.email = response.body.email
+        authUser.apelido = response.body.apelido
+        authUser.nuit = response.body.nuit
+        authUser.bi = response.body.bi
+        authUser.data_nascimento = response.body.data_nascimento
+        authUser.estado = response.body.estado
+        authUser.estado_perfil = response.body.estado_perfil
+        authUser.uuid = response.body.uuid
+        authUser.foto = response.body.foto
+        authUser.id = response.body.id
+        authUser.nivel = response.body.nivel
+        window.localStorage.setItem('authUser', JSON.stringify(authUser))
+        commit('SET_AUTH_USER', authUser)
+        commit('SET_USER', response.body)
+        commit('SET_MESSAGE', 'Conta criada com sucesso')
+        commit('SET_LOADING', false)
+      }).catch(error => {
+        commit('SET_ERROR', error)
+        commit('SET_LOADING', false)
+      })
     }).catch(error => {
       commit('SET_LOADING', false)
       commit('SET_ERROR', error)
+    })
+  },
+  loginUser: ({ commit }, payload) => {
+    commit('SET_LOADING', true)
+    const postData = {
+      grant_type: 'password',
+      client_id: ClientId,
+      client_secret: ClientSecret,
+      username: payload.email,
+      password: payload.password,
+      scope: ''
+    }
+    const authUser = {}
+    Vue.http.post(LoginUrl, postData).then(response => {
+      commit('SET_LOADING', false)
+      console.log(response)
+      authUser.access_token = response.data.access_token
+      authUser.refresh_token = response.data.refresh_token
+      window.localStorage.setItem('authUser', JSON.stringify(authUser))
+      Vue.http.get(userUrl, { headers: getHeader() }).then(response => {
+        console.log('UserObject', response)
+        // this.$store.dispatch('setLoading', false)
+        authUser.name = response.body.name
+        authUser.email = response.body.email
+        authUser.apelido = response.body.apelido
+        authUser.nuit = response.body.nuit
+        authUser.bi = response.body.bi
+        authUser.data_nascimento = response.body.data_nascimento
+        authUser.estado = response.body.estado
+        authUser.estado_perfil = response.body.estado_perfil
+        authUser.uuid = response.body.uuid
+        authUser.foto = response.body.foto
+        authUser.id = response.body.id
+        authUser.nivel = response.body.nivel
+        window.localStorage.setItem('authUser', JSON.stringify(authUser))
+        commit('SET_AUTH_USER', authUser)
+        commit('SET_USER', response.body)
+        commit('SET_LOADING', false)
+      })
+    }).catch(error => {
+      console.log(error)
+      commit('SET_ERROR', error)
+      commit('SET_LOADING', false)
+    })
+  },
+  updateAvatar: ({ commit }, payload) => {
+    commit('SET_LOADING', true)
+    let postData = {
+      foto: payload.foto,
+      id: payload.id
+    }
+    Vue.http.post(updateAvatar, postData, { headers: getHeader() }).then(response => {
+      commit('SET_MESSAGE', response.body.message)
+      commit('SET_USER', response.body.data)
+      commit('SET_LOADING', false)
+    }).catch(error => {
+      commit('SET_ERROR', error)
+      commit('SET_LOADING', false)
+    })
+  },
+  getUser: ({ commit }, payload) => {
+    Vue.http.get(userUrl, { headers: getHeader() }).then(response => {
+      commit('SET_USER', response.body)
+    }).catch(error => {
+      console.log(error)
+    })
+  },
+  updateUser: ({ commit }, payload) => {
+    commit('SET_LOADING', true)
+    let postData = {
+      id: payload.id,
+      name: payload.name,
+      celular: payload.celular,
+      endereco: payload.endereco,
+      apelido: payload.apelido,
+      bi: payload.bi,
+      nuit: payload.nuit,
+      data_nascimento: payload.data_nascimento
+    }
+    Vue.http.post(updatePerfilUrl, postData, { headers: getHeader() }).then(response => {
+      commit('SET_MESSAGE', response.body.message)
+      commit('SET_USER', response.body.data)
+      // commit('SET_LOADING', false)
+      // setTimeout(commit('SET_LOADING', false)
+      //   , 6000)
+    }).catch(error => {
+      commit('SET_ERROR', error)
+      commit('SET_LOADING', false)
     })
   }
 }
@@ -80,7 +205,7 @@ const getters = {
     return state.loading
   },
   user () {
-    return state.authUser
+    return state.user
   },
   authUser () {
     return state.authUser
