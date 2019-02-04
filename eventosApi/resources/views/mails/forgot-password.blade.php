@@ -1,7 +1,3 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: miguel
- * Date: 2/1/19
- * Time: 11:24 PM
- */
+<h1>Esqueceu a senha</h1>
+<p>Recebemos o pedido de ti para repor a senha</p>
+<p>Click <a href="{{$url}}/repor_senha/{{$token->token}}">Repor</a></p>
