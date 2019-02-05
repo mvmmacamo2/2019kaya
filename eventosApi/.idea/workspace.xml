@@ -2,28 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81a25519-0f25-4478-b5b3-50cdd3cce739" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../evento/public/kAYA-lOGO.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../evento/src/assets/banckground.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../evento/src/assets/kAYA-lOGO-TRANSPARENT.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../evento/src/assets/kAYA-lOGO.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../evento/src/components/Admin/Servicos/adminServico.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../evento/src/components/Admin/Users/Users.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../evento/src/components/Saloes.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../evento/src/components/User/ForgotPassword.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../evento/src/components/User/ResetPassword.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../evento/src/store/servicoStore.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/mails/forgot-password.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../evento/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../evento/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../evento/src/components/User/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../evento/src/components/User/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../evento/src/components/User/Registar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../evento/src/components/User/Registar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../evento/src/config/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../evento/src/config/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../evento/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/../evento/src/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../evento/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/../evento/src/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../evento/src/store/userStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/../evento/src/store/userStore.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/kaya/kAYA-lOGO-TRANSPARENT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/kaya/kAYA-lOGO.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/mails/forgot-password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mails/forgot-password.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,6 +26,7 @@
           <entry key="project.closed" value="3" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.26" value="1" />
+          <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.31" value="1" />
           <entry key="project.open.time.32" value="1" />
           <entry key="project.open.time.36" value="1" />
@@ -48,32 +34,71 @@
           <entry key="project.open.time.43" value="1" />
           <entry key="project.open.time.63" value="1" />
           <entry key="project.open.time.64" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key=".env file" value="5" />
-          <entry key="Blade" value="2" />
-          <entry key="PHP" value="16" />
+          <entry key="Blade" value="4" />
+          <entry key="PHP" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="62" />
-          <entry key="Blade" value="185" />
-          <entry key="PHP" value="2578" />
+          <entry key="Blade" value="232" />
+          <entry key="PHP" value="2612" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/mails/forgot-password.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="71" selection-start-line="2" selection-start-column="71" selection-end-line="2" selection-end-column="71" />
+            <state relative-caret-position="255">
+              <caret line="17" column="98" selection-start-line="17" selection-start-column="98" selection-end-line="17" selection-end-column="98" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="61" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
+              <folding>
+                <element signature="e#23#57#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/api.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/auth/verify.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -99,13 +124,14 @@
         <option value="$PROJECT_DIR$/app/Http/Middleware/Cors.php" />
         <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ServicoController.php" />
-        <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_02_01_205853_create_tokens_table.php" />
         <option value="$PROJECT_DIR$/app/Token.php" />
-        <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/app/Mail/ForgotPassword.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/app/User.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/resources/views/mails/forgot-password.blade.php" />
       </list>
     </option>
@@ -248,6 +274,11 @@
             <path>
               <item name="eventosApi" type="b2602c69:ProjectViewProjectNode" />
               <item name="eventosApi" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eventosApi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eventosApi" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -255,6 +286,13 @@
               <item name="eventosApi" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eventosApi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eventosApi" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="eventosApi" type="b2602c69:ProjectViewProjectNode" />
@@ -262,6 +300,11 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="mails" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eventosApi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eventosApi" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -280,6 +323,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/kaya" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/public/imagens/avatar" />
     </key>
@@ -325,16 +369,18 @@
       <workItem from="1549010367822" duration="1848000" />
       <workItem from="1549054494748" duration="6914000" />
       <workItem from="1549287294340" duration="1505000" />
+      <workItem from="1549306046543" duration="1967000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54940000" />
+    <option name="totallyTimeSpent" value="56907000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="28" width="1368" height="713" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19545455" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19848485" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -496,16 +542,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="41" column="44" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
-          <folding>
-            <element signature="e#23#57#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
@@ -520,17 +556,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="61" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
+          <folding>
+            <element signature="e#23#57#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="28" />
+        <state relative-caret-position="184">
+          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/verify.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/mails/forgot-password.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="71" selection-start-line="2" selection-start-column="71" selection-end-line="2" selection-end-column="71" />
+        <state relative-caret-position="255">
+          <caret line="17" column="98" selection-start-line="17" selection-start-column="98" selection-end-line="17" selection-end-column="98" />
         </state>
       </provider>
     </entry>
