@@ -5,9 +5,10 @@ namespace App;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Token;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, Notifiable;
 
@@ -30,10 +31,14 @@ class User extends Authenticatable
     ];
     public function setNameAttribute($value)
     {
-        $this->attributes['name'] = ucfirst(strtolower($value));
+        $this->attributes['name'] = ucwords(strtolower($value));
     }
     public function setApelidoAttribute($value)
     {
         $this->attributes['apelido'] = ucfirst(strtolower($value));
+    }
+    public function token()
+    {
+        return $this->hasMany(Token::class);
     }
 }

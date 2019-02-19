@@ -1,6 +1,8 @@
 import Vue from 'vue'
-import { getHeader, CreateAccountUrl, userUrl, LoginUrl, updateAvatar, updatePerfilUrl } from '../config'
+import { getHeader, CreateAccountUrl, userUrl, LoginUrl, updateAvatar, updatePerfilUrl, forgotPasswordUrl, resetPasswordUrl } from '../config'
 import { ClientSecret, ClientId } from '../config/env'
+import ForgotPassword from '../components/User/ForgotPassword'
+import response from 'vue-resource/src/http/response'
 
 const state = {
   authUser: null,
@@ -70,7 +72,11 @@ const actions = {
     commit('SET_LOADING', true)
     const postData = {
       email: payload.email,
-      password: payload.password
+      password: payload.password,
+      name: payload.name,
+      apelido: payload.apelido,
+      bi: payload.bi,
+      celular: payload.celular
     }
     const authUser = {}
     Vue.http.post(CreateAccountUrl, postData).then(response => {
@@ -188,6 +194,37 @@ const actions = {
       // setTimeout(commit('SET_LOADING', false)
       //   , 6000)
     }).catch(error => {
+      commit('SET_ERROR', error)
+      commit('SET_LOADING', false)
+    })
+  },
+  forgotPassword: ({ commit }, payload) => {
+    commit('SET_LOADING', true)
+    let postData = {
+      email: payload.email,
+      url: payload.url
+    }
+    Vue.http.post(forgotPasswordUrl, postData).then(response => {
+      console.log(response)
+      commit('SET_MESSAGE', response.body.message)
+    }).catch(error => {
+      console.log(error)
+      commit('SET_LOADING', false)
+      console.log(error)
+    })
+  },
+  resetPassword: ({ commit }, payload) => {
+    commit('SET_LOADING', true)
+    let postData = {
+      password: payload.password,
+      confirm_password: payload.confirmPassword,
+      token: payload.token
+    }
+    Vue.http.post(resetPasswordUrl, postData).then(response => {
+      console.log(response)
+      commit('SET_MESSAGE', response.body.message)
+    }).catch(error => {
+      console.log(error)
       commit('SET_ERROR', error)
       commit('SET_LOADING', false)
     })
