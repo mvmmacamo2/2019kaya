@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81a25519-0f25-4478-b5b3-50cdd3cce739" name="Default Changelist" comment="">
-<<<<<<< HEAD
-=======
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../evento/src/components/User/Dialogs/EditUSerProfile.vue" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../evento/src/components/User/Perfil.vue" afterDir="false" />
@@ -19,7 +17,6 @@
       <change beforePath="$PROJECT_DIR$/../evento/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/../evento/src/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../evento/src/store/userStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/../evento/src/store/userStore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../evento/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../evento/src/views/Home.vue" afterDir="false" />
->>>>>>> 7c7229ec242d9017d20141c3ece1afc5d0d9b176
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -390,23 +387,23 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-<<<<<<< HEAD
     <option name="totallyTimeSpent" value="58314000" />
-=======
     <option name="totallyTimeSpent" value="20568000" />
     <option name="totallyTimeSpent" value="33094000" />
->>>>>>> 7c7229ec242d9017d20141c3ece1afc5d0d9b176
+    <option name="totallyTimeSpent" value="20568000" />
+    <option name="totallyTimeSpent" value="33094000" />
+    <option name="totallyTimeSpent" value="58314000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="28" width="1368" height="713" extended-state="6" />
     <editor active="true" />
     <layout>
-<<<<<<< HEAD
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20151515" />
-=======
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16868381" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18030304" />
->>>>>>> 7c7229ec242d9017d20141c3ece1afc5d0d9b176
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16868381" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18030304" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20151515" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -570,7 +567,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/api.php">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
+        <state relative-caret-position="323">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="26" />
+        <state relative-caret-position="501">
+          <caret line="72" column="20" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="30" />
+          <folding>
+            <element signature="e#40#53#0#PHP" expanded="true" />
+          </folding>
         <state relative-caret-position="394">
           <caret line="118" column="64" selection-start-line="118" selection-start-column="64" selection-end-line="118" selection-end-column="64" />
         </state>
@@ -594,7 +597,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="98" selection-start-line="17" selection-start-column="98" selection-end-line="17" selection-end-column="98" />
-=======
         <state relative-caret-position="323">
           <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="26" />
         <state relative-caret-position="501">
@@ -602,7 +604,6 @@
           <folding>
             <element signature="e#40#53#0#PHP" expanded="true" />
           </folding>
->>>>>>> 7c7229ec242d9017d20141c3ece1afc5d0d9b176
         </state>
       </provider>
     </entry>
