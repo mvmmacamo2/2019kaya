@@ -8,6 +8,37 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+require('vue-template-compiler');
+import Vuex from 'vuex'
+import VueRouter from 'vue-router'
+import VueProgressBar from 'vue-progressbar'
+
+import Vue from 'vue'
+import VueMaterial from 'vue-material'
+import 'vue-material/dist/vue-material.min.css'
+
+const options = {
+    color: '#bffaf3',
+    failedColor: '#874b4b',
+    thickness: '5px',
+    transition: {
+        speed: '0.2s',
+        opacity: '0.6s',
+        termination: 300
+    },
+    autoRevert: true,
+    location: 'left',
+    inverse: false
+}
+
+
+Vue.use(VueMaterial)
+Vue.use(Vuex)
+Vue.use(VueProgressBar, options)
+Vue.use(VueRouter)
+import router from './router'
+
+
 
 /**
  * The following block of code may be used to automatically register your
@@ -21,6 +52,7 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('home-component', require('./components/Home').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -29,5 +61,6 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  */
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    router
 });

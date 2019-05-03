@@ -33,6 +33,10 @@ class UserController extends Controller
         //  |confirmed
         $user = User::create([
             'email' => request('email'),
+            'name' => request('name'),
+            'apelido' => request('apelido'),
+            'bi' => request('bi'),
+            'celular' => request('celular'),
             'password' => Hash::make(request('password')),
         ]);
         $params = [
@@ -118,5 +122,10 @@ class UserController extends Controller
        $user->save();
        DB::table('tokens')->where('id', $dbToken->id)->delete();
         return response()->json(['messade' => 'Senha Actualizada com sucesso!', 'class' => 'success'], 200);
+    }
+    public function getUsers() {
+        $users = User::orderBy('id', 'desc')->get();
+        return response()->json($users, 200);
+
     }
 }

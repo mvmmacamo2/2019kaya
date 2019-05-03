@@ -39,5 +39,22 @@ return [
             'tolerance' => env('STRIPE_WEBHOOK_TOLERANCE', 300),
         ],
     ],
+    'twitter' => [
+        'client_id' => 'dqOnWERqMm2epHAGLYAZH7tPs',
+        'client_secret' => 'aAOeCaRVq63RBSvfpPv544MYi47iSrOcKLsjMPUuJw8sTBJaBN',
+        'redirect' => 'http://localhost:8000/login/twitter/callback',
+    ],
+
+    'facebook' => [
+        'client_id' => '1622996907808396',
+        'client_secret' => '82693122fc6a30edddc0db4dbd6651b9',
+        'redirect' => 'http://localhost:8000/login/facebook/callback',
+    ],
+
+    'google' => [
+        'client_id' => '644574870996-tuu4epjnf4fggg4hlu1hdb1tepka87r6.apps.googleusercontent.com',
+        'client_secret' => '_KpjWt35WbBUw6QobTPRr062',
+        'redirect' => 'http://localhost:8000/login/google/callback',
+    ],
 
 ];
