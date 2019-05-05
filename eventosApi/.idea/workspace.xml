@@ -387,6 +387,9 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="58314000" />
+    <option name="totallyTimeSpent" value="20568000" />
+    <option name="totallyTimeSpent" value="33094000" />
     <option name="totallyTimeSpent" value="20568000" />
     <option name="totallyTimeSpent" value="33094000" />
     <option name="totallyTimeSpent" value="58314000" />
@@ -395,6 +398,9 @@
     <frame x="-1" y="28" width="1368" height="713" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20151515" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16868381" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18030304" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16868381" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18030304" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20151515" />
@@ -591,6 +597,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="98" selection-start-line="17" selection-start-column="98" selection-end-line="17" selection-end-column="98" />
+        <state relative-caret-position="323">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="26" />
+        <state relative-caret-position="501">
+          <caret line="72" column="20" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="30" />
+          <folding>
+            <element signature="e#40#53#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

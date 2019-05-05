@@ -2,14 +2,15 @@
   <v-app>
     <v-navigation-drawer
       app
-      stateless
-      value="true"
       absolute
       clipped
       fixed
+      temporary
+      value="true"
       width="300"
       v-model="drawer"
     >
+      <!--stateless-->
       <v-list>
         <v-list-tile :to="'/'">
           <v-list-tile-action>
@@ -128,7 +129,7 @@
     <v-toolbar app fixed clipped-left class="pink darken-3" dark>
       <v-toolbar-side-icon @click.stop="drawer = !drawer" > </v-toolbar-side-icon>
       <v-btn icon large>
-        <v-avatar size="45px" tile>
+        <v-avatar size="45px" tile  to="/">
           <img
             src="./assets/kAYA-lOGO-TRANSPARENT.png"
             alt="Kaya"
@@ -267,13 +268,13 @@ export default {
       menu: {
         logado: [
           { icon: 'settings', title: 'Configuracoes', link: '/admin/configuracoes' },
-          { icon: 'supervisor_account', title: 'perfil', link: '/utilizador/perfil' },
+          { icon: 'supervisor_account', title: 'Minha Conta', link: '/utilizador/perfil' },
           { icon: 'exit_to_app', title: 'sair', link: '/' }
         ],
         admin: {
           minhaconta: [
             { icon: 'settings', title: 'Servicos', link: '/minha-conta/servicos' },
-            { icon: 'supervisor_account', title: 'perfil', link: '/utilizador/perfil' }
+            { icon: 'supervisor_account', title: 'Minha conta', link: '/utilizador/perfil' }
           ],
           servico: [
             { icon: 'add', title: 'Novos', link: '/admin/servicos' }
@@ -301,7 +302,6 @@ export default {
     },
     checkUserStatus () {
       this.$http.get(userUrl, { headers: getHeader() }).then(response => {
-        // console.log('resposta', response)
       }).catch(error => {
         console.log('errosUser', error)
         if (error.status === 401) {

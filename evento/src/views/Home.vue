@@ -1,10 +1,36 @@
 <template>
   <v-container grid-list-md text-xs-left fluid>
-    <v-layout row wrap>
-      <v-flex xs12>
-        <v-card>Home or Casa Eventos</v-card>
-      </v-flex>
-    </v-layout>
+    <v-card class="grey lighten-2" flat>
+      <v-layout row wrap>
+        <v-flex xs12 md3 sm3>
+          <!--max-height="380" min-height="380"-->
+          <v-card>
+            <v-img
+              src="https://cdn.vuetifyjs.com/images/cards/desert.jpg"
+              aspect-ratio="2.75"
+              min-height="200"
+              max-height="200"
+            ></v-img>
+
+            <v-card-title primary-title>
+              <div>
+                <h3 class="headline mb-0">Titulo de casas</h3>
+                <div>  </div>
+              </div>
+            </v-card-title>
+            <v-card-text>
+              dmcjb
+            </v-card-text>
+
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn flat >Share</v-btn>
+              <v-btn flat >Explore</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-flex>
+      </v-layout>
+    </v-card>
     <v-layout row>
       <v-snackbar
         v-model="snackbar"

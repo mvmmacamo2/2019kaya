@@ -41,4 +41,8 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(Token::class);
     }
+    function socialProviders()
+    {
+        return $this->hasMany(SocialProvider::class);
+    }
 }
